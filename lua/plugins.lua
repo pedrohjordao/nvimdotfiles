@@ -9,6 +9,7 @@ cmd [[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]]
 
 return require('packer').startup(function(use)
   -- My plugins here
+  use { 'lewis6991/impatient.nvim' }
   use {
 	  'rcarriga/nvim-notify',
 	  config = function() 
@@ -88,7 +89,6 @@ return require('packer').startup(function(use)
 	    require('Comment').setup()
 	end
   }
-
   use { 'simrat39/rust-tools.nvim' }
   use { 'mfussenegger/nvim-dap' }
 
@@ -117,6 +117,7 @@ return require('packer').startup(function(use)
   }
 
   use { 'tpope/vim-dispatch' }
+  use { 'sbdchd/neoformat' }
   use {
 	'kosayoda/nvim-lightbulb',
 	config = function() 
@@ -133,10 +134,21 @@ return require('packer').startup(function(use)
   use {
     'gelguy/wilder.nvim',
     config = function()
-	    require('wilder_local').setup {}
+            require('wilder_local').setup {}
     end
   }
-
+  use {
+	  'j-hui/fidget.nvim',
+	  config = function()
+		  require('fidget').setup {}
+	  end
+  }
+  use {
+	  'akinsho/toggleterm.nvim',
+	  config = function() 
+		  require('toggleterm_local').setup {}
+	  end
+  }
   if packer_bootstrap then
     require('packer').sync()
   end

@@ -1,11 +1,13 @@
+require('impatient')
 local cmd = vim.cmd
 local g = vim.g
 local set_keymap = vim.api.nvim_set_keymap
 local indent = 2
 
 g.mapleader = ' '
-cmd 'syntax enable'
-cmd 'syntax on'
+cmd('syntax enable')
+cmd('syntax on')
+cmd('set hidden')
 
 --Enable mouse mode
 vim.o.mouse = 'a'

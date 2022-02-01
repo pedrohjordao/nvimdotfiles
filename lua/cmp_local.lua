@@ -63,21 +63,6 @@ function M.setup()
 	       ghost_text = true
        }
     }
-
-    -- `/` cmdline setup.
-    cmp.setup.cmdline('/', {
-      sources = {
-	{ name = 'buffer' }
-      }
-    })
-    -- `:` cmdline setup.
-    cmp.setup.cmdline(':', {
-      sources = cmp.config.sources({
-	{ name = 'path' }
-      }, {
-	{ name = 'cmdline' }
-      })
-    })
 end
 
 return M
