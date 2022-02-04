@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
   }
   use { 'L3MON4D3/LuaSnip' }
   use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'kyazdani42/nvim-web-devicons' }
   use { 'hrsh7th/cmp-buffer' }
   use { 'hrsh7th/cmp-path' }
   use { 'hrsh7th/cmp-nvim-lua' }
@@ -148,6 +149,13 @@ return require('packer').startup(function(use)
 	  config = function() 
 		  require('toggleterm_local').setup {}
 	  end
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+	    require('lualine_local').setup {}
+    end
   }
   if packer_bootstrap then
     require('packer').sync()

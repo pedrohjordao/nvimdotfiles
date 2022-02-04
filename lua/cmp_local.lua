@@ -7,7 +7,7 @@ function M.setup()
 	cmp.setup {
 	  formatting = {
 	    format = lspkind.cmp_format({
-	      with_text = true, -- do not show text alongside icons
+	      mode = 'symbol_text', 
 	      menu = {
 		      buffer = "[buf]",
 		      nvim_lsp = "[LSP]",
