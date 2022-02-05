@@ -3,7 +3,7 @@ local M = {}
 function M.setup() 
 	vim.api.nvim_set_keymap('n', '<leader>gv', ':Gv<cr>', {noremap = true})
 	vim.api.nvim_set_keymap('n', '<leader>gg', ':G<cr>', {noremap = true})
-	vim.api.nvim_set_keymap('n', '<leader>gp', ':G push -u origin head<cr>', {noremap = true})
+	vim.api.nvim_set_keymap('n', '<leader>gP', ':G push -u origin head<cr>', {noremap = true})
 	vim.api.nvim_set_keymap('n', '<leader>gf', ':G push --force<cr>', {noremap = true})
 	vim.api.nvim_set_keymap('n', '<leader>gp', ':G pull<cr>', {noremap = true})
 	vim.api.nvim_set_keymap('n', '<leader>gl', ':Glog<cr>', {noremap = true})
