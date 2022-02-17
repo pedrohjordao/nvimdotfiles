@@ -25,7 +25,7 @@ function M.setup()
 	capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 	-- Enable the following language servers
-	local servers = { 'clangd', 'pyright', 'tsserver' }
+	local servers = { 'pyright', 'tsserver' }
 	for _, lsp in ipairs(servers) do
 	  lspconfig[lsp].setup {
 	    on_attach = on_attach,
@@ -37,8 +37,11 @@ function M.setup()
 	-- Scala
 	vim.cmd [[augroup lsp]]
 	vim.cmd [[au!]]
-	vim.cmd [[au FileType java,scala,sbt lua require("metals").initialize_or_attach({})]]
+	vim.cmd [[au FileType java,scala,sbt lua require('metals').initialize_or_attach({})]]
 	vim.cmd [[augroup end]]
+
+	--cpp
+	require('clangd_extensions').setup()
 
 	-- Rust
 	require('rust-tools').setup {}
@@ -48,8 +51,8 @@ function M.setup()
 	local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h:h')
 
 	local runtime_path = vim.split(package.path, ';')
-	table.insert(runtime_path, "lua/?.lua")
-	table.insert(runtime_path, "lua/?/init.lua")
+	table.insert(runtime_path, 'lua/?.lua')
+	table.insert(runtime_path, 'lua/?/init.lua')
 
 
 	require('lspconfig').sumneko_lua.setup {
@@ -67,7 +70,7 @@ function M.setup()
 		},
 		workspace = {
 		    -- Make the server aware of Neovim runtime files
-		    library = vim.api.nvim_get_runtime_file("", true),
+		    library = vim.api.nvim_get_runtime_file('', true),
 		},
 		-- Do not send telemetry data containing a randomized but unique identifier
 		telemetry = {

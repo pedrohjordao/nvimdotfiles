@@ -91,6 +91,7 @@ return require('packer').startup(function(use)
 	end
   }
   use { 'simrat39/rust-tools.nvim' }
+  use { 'p00f/clangd_extensions.nvim' }
   use { 'mfussenegger/nvim-dap' }
 
   use {
